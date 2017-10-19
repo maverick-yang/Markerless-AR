@@ -1,4 +1,4 @@
-MarkerlessAR
+Markerless-AR
 ==========
 
 Markerless AR application based on Android for SMART Glasses Demonstration.

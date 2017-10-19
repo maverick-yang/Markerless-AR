@@ -1,0 +1,43 @@
+apply plugin: 'com.android.application'
+
+
+def NATIVE_LIB_DIR = 'Lib/jniLib'
+def JAR_DIR = 'Lib'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "22.0.1"
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir "$NATIVE_LIB_DIR/"
+    }
+    defaultConfig {
+        applicationId 'com.vuforia.samples.RaonAR'
+        minSdkVersion 8
+        targetSdkVersion 19
+        versionCode 200
+        versionName "5.0"
+    }
+    archivesBaseName = rootProject.projectDir.getName()
+    buildTypes {
+        release {
+            minifyEnabled false
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            ndk {
+                abiFilters "armeabi-v7a"
+            }
+        }
+    }
+    productFlavors {
+    }
+}
+
+dependencies {
+    compile files("$JAR_DIR/Vuforia.jar")
+}

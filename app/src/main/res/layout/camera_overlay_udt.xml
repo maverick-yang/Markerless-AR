@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/camera_overlay_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+    <RelativeLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:weightSum="1" >
+
+        <ImageButton
+            android:id="@+id/camera_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_centerHorizontal="true"
+            android:background="@color/transparent"
+            android:contentDescription="@string/content_desc_camera_button"
+            android:onClick="onCameraClick"
+            android:padding="10dp"
+            android:src="@drawable/camera_button_background" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/loading_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:padding="30dp"
+        android:visibility="gone" >
+
+        <ProgressBar
+            style="@android:style/Widget.ProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
